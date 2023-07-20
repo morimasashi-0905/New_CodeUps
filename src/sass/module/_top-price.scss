@@ -1,0 +1,78 @@
+@use "global" as *;
+
+.top-price {
+    background-color: $l-green;
+    position: relative;
+}
+.top-price:after {
+    @include mq('md') {
+        content: "";
+        display: inline-block;
+        background: url(../images/common/bg-fish-green.png) no-repeat center / contain;
+        width: rem(437);
+        height: rem(201);
+        position: absolute;
+        bottom: rem(60);
+        left: max(calc(50vw - rem(620)), calc(50vw - 50% + rem(25)));
+    }
+}
+
+.top-price__inner {
+    padding-top: rem(80);
+    padding-bottom: rem(80);
+    @include mq('md') {
+        padding-top: rem(100);
+        padding-bottom: rem(100);
+    }
+}
+
+.top-price__body {
+    font-family: $jpn-font-family;
+    margin-top: rem(24);
+    max-width: rem(600);
+    margin-left: auto;
+    margin-right: auto;
+    @include mq('md') {
+        max-width: 100%;
+        display: flex;
+        gap: rem(93);
+        flex-direction: row-reverse;
+        margin-top: rem(40);
+    }
+}
+
+.top-price__image {
+    width: 100%;
+    @include mq('md') {
+        width: 50%;
+    }
+    & source, img {
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 345 / 227;
+        @include mq('md') {
+            aspect-ratio: 492 / 746;
+        }
+    }
+}
+
+
+.top-price__price-menus {
+    margin-top: rem(40);
+    max-width: rem(500);
+    margin-left: auto;
+    margin-right: auto;
+    @include mq('md') {
+        max-width: 100%;
+        margin-top: 0;
+        width: 50%;
+    }
+}
+
+.top-price__price-menu + .top-price__price-menu {
+    margin-top: rem(40);
+}
+
+.top-price__button {
+    text-align: center;
+}

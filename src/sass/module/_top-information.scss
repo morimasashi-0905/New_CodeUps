@@ -1,0 +1,32 @@
+@use "global" as *;
+
+.top-information {
+    background-color: $l-green;
+}
+
+.top-information__inner {
+    padding-top: rem(80);
+    padding-bottom: rem(80);
+    @include mq('md') {
+        padding-top: rem(100);
+        padding-bottom: rem(100);
+    }
+}
+
+.top-information__body {
+    max-width: rem(600);
+    margin-top: rem(24);
+    margin-left: auto;
+    margin-right: auto;
+    @include mq('md') {
+        max-width: 100%;
+        display: flex;
+        margin-top: rem(40);
+    }
+}
+
+.top-information__button {
+    text-align: center;
+    margin-top: rem(40);
+}
+

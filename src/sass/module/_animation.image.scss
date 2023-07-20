@@ -1,0 +1,22 @@
+@use "global" as *;
+
+.animation-image {
+    position: relative;
+    overflow: hidden;
+    & span {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $accent;
+        z-index: $z-upper;
+        transform: translateX(100%);
+    }
+    & img {
+        transform: translateX(100%);
+    }
+}
+
+
+

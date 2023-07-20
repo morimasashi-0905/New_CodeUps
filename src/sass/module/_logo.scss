@@ -1,0 +1,16 @@
+@use "global" as *;
+
+.logo {
+    display: inline-block;
+    width: rem(102);
+    height: inherit;
+    @include mq('md') {
+        width: rem(133);
+    }
+}
+
+.logo__link {
+    height: inherit;
+    display: flex;
+    align-items: center;
+}

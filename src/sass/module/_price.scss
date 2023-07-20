@@ -1,0 +1,62 @@
+@use "global" as *;
+
+.price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: rem(13) rem(16) 0;
+    @include mq('md') {
+        padding-top: rem(20);
+    }
+}
+
+.price__comment {
+    color: $font;
+    font-size: rem(14);
+    line-height: 1;
+    text-align: center;
+    @include mq('md') {
+        font-size: rem(16);
+    }
+}
+
+.price__wrap {
+    display: flex;
+    align-items: baseline;
+    font-weight: $semibold;
+    line-height: 1;
+    margin-top: rem(13);
+    font-family: $jpn-font-family;
+    @include mq('md') {
+        margin-top: rem(12);
+    }
+}
+
+.price__before {
+    font-size: rem(20);
+    color: $font;
+    position: relative;
+    @include mq('md') {
+        font-size: rem(24);
+    }
+}
+.price__before::before {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: rem(3);
+    background-color: $red;
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+.price__after {
+    font-size: rem(32);
+    color: $accent;
+    margin-left: rem(16);
+    @include mq('md') {
+        font-size: rem(40);
+        margin-left: rem(16);
+    }
+}

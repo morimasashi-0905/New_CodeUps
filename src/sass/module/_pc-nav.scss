@@ -1,0 +1,54 @@
+@use "global" as *;
+
+.pc-nav {
+    color: $white;
+}
+
+.pc-nav__items {
+    display: flex;
+    height: inherit;
+}
+
+.pc-nav__item {
+    height: inherit;
+    line-height: 1;
+}
+
+.pc-nav__item a {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-left: rem(20);
+    padding-right: rem(20);
+    position: relative;
+}
+.pc-nav__item a::after {
+    content: "";
+    display: block;
+    width: calc(100% - rem(40));
+    height: rem(1);
+    background-color: $white;
+    position: absolute;
+    left: rem(20);
+    bottom: rem(20);
+    transform: scale(0, 1);
+    transition: all .3s;
+}
+.pc-nav__item a:hover::after {
+    transform: scale(1, 1);
+}
+
+.pc-nav__item p {
+    font-size: rem(18);
+}
+
+.pc-nav__item span {
+    font-size: rem(10);
+    font-family: $jpn-font-family;
+    margin-top: rem(6);
+}
+
+
+

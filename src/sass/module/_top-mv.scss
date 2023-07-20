@@ -1,0 +1,147 @@
+@use "global" as *;
+
+.top-mv {
+    width: 100%;
+    position: relative;
+    @include mq('md') {
+        background-color: $white;
+    }
+}
+
+.top-mv,
+.top-mv__slider {
+    width: 100%;
+    height: 100vh;
+}
+
+.top-mv__sp-slider,
+.top-mv__pc-slider {
+    height: inherit;
+}
+
+.top-mv__sp-slider {
+    @include mq('md') {
+        display: none;
+    }
+}
+
+.top-mv__pc-slider {
+    display: none;
+    @include mq('md') {
+        display: block;
+        overflow: hidden;
+    }
+}
+
+.top-mv__slider.swiper {
+    width: 100%;
+    height: inherit;
+}
+
+.top-mv {
+    &
+    .swiper-wrapper,
+    .swiper-slide,
+    .top-mv__image,
+    .top-mv__image img,
+    .top-mv__animation-image {
+        width: 100%;
+        height: inherit;
+    }
+}
+
+.top-mv__image,
+.top-mv__image img {
+    aspect-ratio: 375/667;
+    object-fit: cover;
+    @include mq('md') {
+        aspect-ratio: 1440/768;
+    }
+}
+
+.top-mv__animation-image {
+    position: relative;
+    display: flex;
+}
+.top-mv__image--left,
+.top-mv__image--right,
+.top-mv__image--left img,
+.top-mv__image--right img {
+    width: 50%;
+    height: inherit;
+    object-fit: cover;
+    aspect-ratio: 720 / 768;
+}
+.top-mv__image--left {
+    left: 0;
+    object-position: right;
+    transform: translateY(100%);
+}
+.top-mv__image--right {
+    right: 0;
+    object-position: left;
+    transform: translateY(100%);
+}
+
+.top-mv__inner {
+    width: 100%;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-mv__title {
+    width: 100%;
+    color: $white;
+    text-align: center;
+    z-index: $z-upper;
+    line-height: 1;
+    margin-top: rem(80);
+    @include mq('md') {
+        color: $accent;
+        margin-top: rem(192);
+    }
+}
+
+.top-mv__title h2 {
+    width: 100%;
+    text-transform: uppercase;
+    font-size: rem(40);
+    letter-spacing: 0.51em;
+    position: relative;
+    left: rem(10);
+    opacity: 0;
+    @include mq('md') {
+        font-size: rem(80);
+        left: rem(20);
+        opacity: 1;
+    }
+}
+
+.top-mv__title p {
+    width: 100%;
+    font-size: rem(20);
+    margin-top: rem(8);
+    opacity: 0;
+    @include mq('md') {
+        opacity: 1;
+    }
+}
+
+.top-mv__button {
+    width: 100%;
+    text-align: center;
+    margin-top: rem(20);
+    z-index: $z-upper;
+    opacity: 0;
+    @include mq('md') {
+        margin-top: rem(40);
+    }
+}
+

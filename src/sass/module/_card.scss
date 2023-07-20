@@ -1,0 +1,316 @@
+@use "global" as *;
+
+.card {
+    width: 100%;
+    transition: .3s; // hover用
+}
+
+.card__title {
+    color: $black;
+    font-size: rem(16);
+    line-height: 1;
+    font-family: $jpn-font-family;
+}
+.card__title--campaign {
+    font-weight: $semibold;
+    border-bottom: rem(1) solid $accent;
+    margin-top: rem(8);
+    padding-bottom: rem(12);
+}
+.card__title--about {
+    color: $accent;
+    font-size: rem(40);
+    font-weight: $normal;
+    margin-top: rem(40);
+    border: none;
+    font-family: $base-font-family;
+    @include mq('md') {
+        color: $white;
+        font-size: rem(80);
+        margin-top: 0;
+        width: 50%;
+        line-height: 1.25;
+    }
+}
+.card__title--information {
+    font-size: rem(20);
+    font-weight: $bold;
+    border-bottom: rem(1) solid $accent;
+    padding-bottom: rem(4);
+    @include mq('md') {
+        font-size: rem(24);
+        padding-bottom: rem(8);
+    }
+}
+.card__title--blog {
+    margin-top: rem(8);
+    font-weight: $semibold;
+    padding-bottom: rem(8);
+    border-bottom: rem(1) solid $accent;
+}
+.card__title--voice {
+    font-size: rem(16);
+    margin-top: rem(4);
+    font-weight: $semibold;
+    line-height: 1.5;
+    @include mq('md') {
+        margin-top: rem(8);
+        font-size: rem(24);
+    }
+}
+
+.card__text {
+    color: $font;
+    line-height: calc(24/16);
+    font-family: $jpn-font-family;
+}
+.card__text--about {
+    margin-top: rem(16);
+    @include mq('md') {
+        color: $white;
+        margin-top: 0;
+    }
+}
+.card__text--information {
+    margin-top: rem(8);
+    @include mq('md') {
+        color: $black;
+    }
+}
+.card__text--blog {
+    margin-top: rem(16);
+}
+.card__text--voice {
+    margin-top: rem(16);
+    @include mq('md') {
+        margin-top: rem(40);
+    }
+}
+
+.card__age-gender {
+    color: $font;
+    font-size: rem(12);
+    font-family: $jpn-font-family;
+    line-height: 1;
+    @include mq('md') {
+        line-height: 1.5;
+    }
+}
+
+.card__date {
+    color: $font;
+    font-size: rem(12);
+    font-family: $jpn-font-family;
+    line-height: 1;
+}
+
+.card__category {
+    display: inline-block;
+    width: fit-content;
+    color: $accent;
+    font-size: rem(12);
+    line-height: 1.5;
+    border: rem(1) solid $accent;
+    padding: rem(5) rem(11);
+    @include mq('md') {
+        padding: rem(7) rem(15);
+    }
+}
+.card__category--voice {
+    margin-top: rem(3);
+    @include mq('md') {
+        margin-top: 0;
+        margin-left: auto;
+    }
+}
+
+
+// campaign
+.card__campaign-inner {
+    padding: rem(16) rem(16) rem(24);
+    @include mq('md') {
+        padding-top: rem(24);
+        padding-bottom: rem(40);
+    }
+}
+
+.card__campaign-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    & img {
+        aspect-ratio: 280 / 188;
+        @include mq('md') {
+            aspect-ratio: 334 / 223;
+        }
+    }
+}
+
+
+// about
+.card__about-images {
+    display: flex;
+    position: relative;
+}
+.card__about-image1 {
+    width: calc(128 / 345 * 100%);
+    padding-bottom: rem(18);
+    @include mq('md') {
+        width: calc(400 / 1080 * 100%);
+        padding-bottom: rem(55);
+    }
+    & img {
+        object-fit: cover;
+        aspect-ratio: 128 / 194;
+        @include mq('md') {
+            aspect-ratio: 400 / 606;
+        }
+    }
+}
+.card__about-image2 {
+    position: absolute;
+    width: calc(281 / 345 * 100%);
+    right: 0;
+    bottom: 0;
+    z-index: $z-under;
+    @include mq('md') {
+        width: calc(880 / 1080 * 100%);
+    }
+    & img {
+        aspect-ratio: 281 / 186;
+        object-fit: cover;
+        @include mq('md') {
+        }
+        aspect-ratio: 880 / 581;
+    }
+}
+
+.card__about-body {
+    margin-top: rem(40);
+    max-width: rem(500);
+    margin-left: auto;
+    margin-right: auto;
+    @include mq('md') {
+        max-width: rem(920);
+        display: flex;
+        gap: rem(40);
+        margin-top: 0;
+        margin-left: auto;
+        padding-left: rem(40);
+        padding-right: rem(40);
+        position: absolute;
+        top: rem(200);
+        right: 0;
+        width: 100%;
+    }
+}
+
+.card__about-pc-wrap {
+    @include mq('md') {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+}
+
+.card__about-button {
+    text-align: center;
+    margin-top: rem(40);
+}
+
+
+// information
+.card__information-image {
+    width: 100%;
+    @include mq('md') {
+        width: 50%;
+    }
+    & img {
+        object-fit: cover;
+        aspect-ratio: 345 / 227;
+        @include mq('md') {
+            aspect-ratio: 540 / 356;
+        }
+    }
+}
+
+.card__information-contents {
+    display: flex;
+    flex-direction: column;
+    margin-top: rem(27);
+    @include mq('md') {
+        width: 50%;
+        margin-top: rem(56);
+        padding-left: rem(48);
+    }
+}
+
+
+// blog
+.card__blog-inner {
+    padding: rem(16) rem(16) rem(24);
+}
+
+.card__blog-contents {
+    margin-top: rem(25);
+}
+
+.card__blog-image {
+    width: 100%;
+    & img {
+        object-fit: cover;
+        aspect-ratio: 301 / 201;
+    }
+}
+
+
+// voice
+.card__voice-inner {
+    padding: rem(16) rem(16) rem(24);
+    @include mq('md') {
+        padding: rem(24);
+    }
+}
+
+.card__voice-head {
+    display: flex;
+    gap: rem(13);
+    align-items: flex-end;
+    @include mq('md') {
+        gap: rem(16);
+    }
+}
+.card__voice-head-left {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border-bottom: rem(1) solid $accent;
+    margin-top: rem(1);
+    @include mq('md') {
+        width: calc(276 / (520 - 64) * 100%);
+    }
+}
+
+.card__info {
+    display: flex;
+    flex-direction: column;
+    @include mq('md') {
+        margin-top: rem(24);
+        flex-direction: row;
+        align-items: flex-end;
+    }
+}
+
+.card__voice-image {
+    width: 50%;
+    @include mq('md') {
+        width: calc(180 / (520 - 64) * 100%);
+    }
+    & img {
+        object-fit: cover;
+        aspect-ratio: 151 / 117;
+        @include mq('md') {
+            aspect-ratio: 180 / 140;
+        }
+    }
+}

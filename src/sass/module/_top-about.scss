@@ -1,0 +1,23 @@
+@use "global" as *;
+
+.top-about {
+    position: relative;
+}
+.top-about::after {
+    @include mq('md') {
+        content: "";
+        display: inline-block;
+        background: url(../images/common/bg-sango.png) center center / contain;
+        width: rem(194);
+        height: rem(181);
+        position: absolute;
+        bottom: rem(-90);
+        right: max(calc(50vw - rem(680)), calc(50vw - 50% + rem(80)));
+    }
+}
+
+.top-about__card {
+    position: relative;
+}
+
+

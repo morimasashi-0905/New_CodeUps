@@ -1,0 +1,70 @@
+@use "global" as *;
+
+.button {
+    display: inline-block;
+    width: rem(202);
+    color: $white;
+    font-size: rem(14);
+    line-height: 1;
+    padding: rem(19) rem(19) rem(19) rem(40);
+    text-align: left;
+    background-color: $accent;
+    border: rem(1) solid $accent;
+    position: relative;
+    transition: .3s;
+    z-index: $z-upper;
+}
+
+.button::after {
+    content: "";
+    width: rem(202);
+    height: rem(54);
+    border: rem(1) solid $accent;
+    position: absolute;
+    top: rem(4);
+    left: rem(4);
+    z-index: -10;
+}
+
+.button::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    color: $accent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+    z-index: $z-under;
+}
+
+.button:hover {
+    color: $accent;
+}
+
+.button:hover::before {
+    transform: scale(1, 1);
+}
+
+// arrow
+.button span::after {
+    content: "";
+    display: inline-block;
+    background-image: url(../images/common/button-arrow-white.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: rem(40);
+    height: rem(7);
+    position: absolute;
+    top: 50%;
+    right: rem(40);
+    transform: translateY(calc(-50% - rem(3)));
+    z-index: $z-under;
+}
+.button:hover span::after  {
+    background-image: url(../images/common/button-arrow-accent.png);
+}

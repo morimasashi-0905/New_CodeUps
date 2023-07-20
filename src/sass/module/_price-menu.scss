@@ -1,0 +1,25 @@
+@use "global" as *;
+
+.price-menu__title {
+    font-size: rem(16);
+    font-weight: $bold;
+    line-height: 1.5;
+    padding-bottom: rem(3);
+    border-bottom: rem(1) solid $accent;
+}
+
+.price-menu__course-item {
+    display: flex;
+    margin-top: rem(8);
+    line-height: calc(24/14);
+    font-size: rem(14);
+    @include mq('md') {
+        line-height: 1.5;
+        font-size: rem(16);
+    }
+}
+
+.price-menu__course-price {
+    margin-left: auto;
+}
+
