@@ -15,10 +15,10 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     let topMvSpSwipeOption = {
         loop: true,
         effect: 'fade',
-        // autoplay: {
-        //     delay: 3000,
-        //     disableOnInteraction: false,
-        // },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
         speed: 1200,
     }
     const swiper = new Swiper(".js-top-mv__sp-swiper", topMvSpSwipeOption)
@@ -27,10 +27,10 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     let topMvPcSwipeOption = {
         loop: true,
         effect: 'fade',
-        // autoplay: {
-        //     delay: 4000,
-        //     disableOnInteraction: false,
-        // },
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
         speed: 1500,
     }
     new Swiper(".js-top-mv__pc-swiper", topMvPcSwipeOption)
@@ -38,10 +38,10 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 // js-top-campaign__swiper
     let topCampaignSwipeOption = {
         loop: true,
-        // autoplay: {
-        //     delay: 4000,
-        //     disableOnInteraction: false,
-        // },
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
         speed: 700,
         slidesPerView: 1.26,
         spaceBetween: 24,
