@@ -11,6 +11,7 @@
 .top-campaign__body {
     width: 100%;
     margin-top: rem(4);
+    overflow: hidden;
     @include mq('md') {
         margin-top: rem(16);
     }

@@ -7,7 +7,7 @@
     height: 100%;
     max-height: rem(530);
     @include mq('md') {
-        max-height: calc(rem(559) - rem(310));//333はsite-nav以外の合計
+        max-height: rem(270);
     }
 }
 
