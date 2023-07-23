@@ -11,7 +11,6 @@
 .top-campaign__body {
     width: 100%;
     margin-top: rem(4);
-    overflow: hidden;
     @include mq('md') {
         margin-top: rem(16);
     }
@@ -20,8 +19,12 @@
 .top-campaign__body-inner.inner {
     padding-right: 0;
     padding-left: 0;
-    @include mq(sm) {
-        padding-left: 0;
+    @include mq('sm') {
+        max-width: rem(600);
+    }
+    @include mq(lg) {
+        max-width: rem(1440);
+        padding-left: calc(180 / 1440 * 100%);
         padding-right: 0;
         position: relative;
     }
@@ -87,8 +90,6 @@
     padding-left: rem(15);
     width: 100%;
     @include mq('md') {
-        margin: 0 calc(50% - 50vw);
-        width: 100vw;
         padding-left: 0;
     }
 }
@@ -99,6 +100,9 @@
     margin-bottom: rem(20);
     box-shadow: 2px 2px 10px 0px rgba(#000, 0.25);
     background-color: $white;
+    display: flex;
+    flex-direction: column;
+    height: auto;
     &:hover {
         box-shadow: 2px 2px 20px $black;
     }

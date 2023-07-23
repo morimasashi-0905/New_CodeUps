@@ -10,6 +10,10 @@
     }
 }
 
+.price-gap {
+    margin-top: auto;
+}
+
 .price__comment {
     color: $font;
     font-size: rem(14);
@@ -36,7 +40,7 @@
     font-size: rem(20);
     color: $font;
     position: relative;
-    @include mq('md') {
+    @include mq('xl') {
         font-size: rem(24);
     }
 }
@@ -55,7 +59,7 @@
     font-size: rem(32);
     color: $accent;
     margin-left: rem(16);
-    @include mq('md') {
+    @include mq('xl') {
         font-size: rem(40);
         margin-left: rem(16);
     }

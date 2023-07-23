@@ -5,6 +5,21 @@
     transition: .3s; // hover用
 }
 
+.card__body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: rem(16) rem(16) rem(24);
+    @include mq('md') {
+        padding-top: rem(24);
+        padding-bottom: rem(40);
+    }
+}
+.card__upper-body {
+    display: flex;
+    flex-direction: column;
+}
+
 .card__title {
     color: $black;
     font-size: rem(16);
@@ -12,10 +27,11 @@
     font-family: $jpn-font-family;
 }
 .card__title--campaign {
+    line-height: calc(24/16);
     font-weight: $semibold;
     border-bottom: rem(1) solid $accent;
-    margin-top: rem(8);
-    padding-bottom: rem(12);
+    margin-top: rem(4);
+    padding-bottom: rem(4);
 }
 .card__title--about {
     color: $accent;
@@ -136,9 +152,9 @@
 
 .card__campaign-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
     & img {
+        object-fit: cover;
         aspect-ratio: 280 / 188;
         @include mq('md') {
             aspect-ratio: 334 / 223;
@@ -187,7 +203,7 @@
 
 .card__about-body {
     margin-top: rem(40);
-    max-width: rem(500);
+    max-width: rem(600);
     margin-left: auto;
     margin-right: auto;
     @include mq('md') {

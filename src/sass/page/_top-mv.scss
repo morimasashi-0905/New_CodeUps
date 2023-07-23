@@ -102,10 +102,9 @@
     text-align: center;
     z-index: $z-upper;
     line-height: 1;
-    margin-top: rem(80);
     @include mq('md') {
         color: $accent;
-        margin-top: rem(192);
+        margin-top: rem(16);
     }
 }
 
