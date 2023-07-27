@@ -1,20 +1,20 @@
 @use "global" as *;
 
-.price {
+.card-price {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: rem(13) rem(16) 0;
+    margin-top: rem(13);
     @include mq('md') {
-        padding-top: rem(20);
+        margin-top: rem(20);
     }
 }
 
-.price-gap {
+.card-price-gap {
     margin-top: auto;
 }
 
-.price__comment {
+.card-price__comment {
     color: $font;
     font-size: rem(14);
     line-height: 1;
@@ -24,8 +24,9 @@
     }
 }
 
-.price__wrap {
+.card-price__wrap {
     display: flex;
+    justify-content: center;
     align-items: baseline;
     font-weight: $semibold;
     line-height: 1;
@@ -36,7 +37,7 @@
     }
 }
 
-.price__before {
+.card-price__before {
     font-size: rem(20);
     color: $font;
     position: relative;
@@ -44,7 +45,7 @@
         font-size: rem(24);
     }
 }
-.price__before::before {
+.card-price__before::before {
     content: "";
     display: inline-block;
     width: 100%;
@@ -55,7 +56,7 @@
     left: 0;
 }
 
-.price__after {
+.card-price__after {
     font-size: rem(32);
     color: $accent;
     margin-left: rem(16);

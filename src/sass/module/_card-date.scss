@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.card-date {
+    color: $font;
+    font-size: rem(12);
+    font-family: $jpn-font-family;
+    line-height: 1;
+}

@@ -10,12 +10,10 @@
 
 .footer__inner {
     height: inherit;
-    padding-top: rem(48);
     padding-bottom: rem(56);
     display: flex;
     flex-direction: column;
     @include mq('md') {
-        padding-top: rem(80);
         padding-bottom: rem(80);
     }
 }
@@ -27,7 +25,9 @@
 }
 
 .footer__head {
+    margin-top: rem(48);
     @include mq('md') {
+        margin-top: rem(80);
         display: flex;
         align-items: baseline;
     }

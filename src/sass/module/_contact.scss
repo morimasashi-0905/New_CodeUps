@@ -64,9 +64,12 @@
     display: flex;
     justify-content: center;
     border-bottom: rem(1) solid $accent;
+    padding-bottom: rem(6);
+    @include mq('md') {
+        padding-bottom: rem(8);
+    }
 }
 .contact__logo img {
-    margin-bottom: rem(6);
     width: rem(174);
     @include mq('md') {
         width: rem(200);

@@ -1,0 +1,34 @@
+@use "global" as *;
+
+.blog-card {
+    width: 100%;
+    transition: .3s; // hover用
+}
+
+.blog-card__inner {
+    padding: rem(16) rem(16) rem(24);
+
+}
+
+.blog-card__image {
+    width: 100%;
+    & img {
+        object-fit: cover;
+        aspect-ratio: 301 / 201;
+    }
+}
+
+.blog-card__contents {
+    margin-top: rem(25);
+}
+
+.blog-card-title {
+    margin-top: rem(8);
+    font-weight: $semibold;
+    padding-bottom: rem(8);
+    border-bottom: rem(1) solid $accent;
+}
+
+.blog-card__text {
+    margin-top: rem(20);
+}

@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.card-title {
+    color: $black;
+    font-size: rem(16);
+    line-height: 1;
+    font-family: $jpn-font-family;
+}

@@ -12,12 +12,110 @@
         height: rem(181);
         position: absolute;
         bottom: rem(-90);
-        right: max(calc(50vw - rem(680)), calc(50vw - 50% + rem(80)));
+        right: max(calc(50vw - rem(640)), calc(50vw - 50% + rem(80)));
     }
 }
 
-.top-about__card {
-    position: relative;
+.top-about__body {
+    @include mq('md') {
+        position: relative;
+    }
 }
 
+.top-about__images {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+.top-about__image1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(128 / 345 * 100%);
+    @include mq('md') {
+        width: calc(400 / 1080 * 100%);
+    }
+    & img {
+        object-fit: cover;
+        aspect-ratio: 128 / 194;
+        @include mq('md') {
+            aspect-ratio: 400 / 606;
+        }
+    }
+}
+.top-about__image2 {
+    z-index: $z-under;
+    margin-left: auto;
+    width: calc(281 / 345 * 100%);
+    padding-top: rem(26);
+    @include mq('md') {
+        width: calc(880 / 1080 * 100%);
+        padding-top: rem(80);
+    }
+    & img {
+        object-fit: cover;
+        aspect-ratio: 281 / 186;
+        @include mq('md') {
+            aspect-ratio: 880 / 581;
+        }
+    }
+}
+
+.top-about__body-contents {
+    max-width: rem(600);
+    margin-left: auto;
+    margin-right: auto;
+    @include mq('md') {
+        position: absolute;
+        max-width: rem(920);
+        display: flex;
+        gap: rem(40);
+        margin-left: auto;
+        padding-left: rem(40);
+        padding-right: rem(40);
+        position: absolute;
+        top: rem(200);
+        right: 0;
+        width: 100%;
+    }
+}
+
+.top-about__body-title {
+    color: $accent;
+    font-size: rem(40);
+    font-weight: $normal;
+    margin-top: rem(40);
+    border: none;
+    font-family: $base-font-family;
+    line-height: 1;
+    @include mq('md') {
+        color: $white;
+        font-size: rem(80);
+        margin-top: 0;
+        width: 50%;
+        line-height: 1.25;
+    }
+}
+
+.top-about__body-pc-wrap {
+    @include mq('md') {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+}
+
+.top-about__body-text {
+    margin-top: rem(16);
+    @include mq('md') {
+        color: $white;
+        margin-top: 0;
+    }
+}
+
+
+.top-about__button {
+    text-align: center;
+    margin-top: rem(40);
+}
 

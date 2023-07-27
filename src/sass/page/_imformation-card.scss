@@ -1,0 +1,58 @@
+@use "global" as *;
+
+.information-card__image {
+    width: 100%;
+    @include mq('md') {
+        width: 50%;
+    }
+    & img {
+        object-fit: cover;
+        aspect-ratio: 345 / 227;
+        @include mq('md') {
+            aspect-ratio: 540 / 356;
+        }
+    }
+}
+
+.information-card__contents {
+    display: flex;
+    flex-direction: column;
+    margin-top: rem(27);
+    @include mq('md') {
+        width: 50%;
+        margin-top: rem(56);
+        padding-left: rem(48);
+    }
+}
+
+.information-card__title {
+    font-weight: $bold;
+    border-bottom: rem(1) solid $accent;
+    padding-bottom: rem(4);
+    @include mq('md') {
+        padding-bottom: rem(8);
+    }
+}
+.information-card__title.card-title {
+    font-size: rem(20);
+    @include mq('md') {
+        font-size: rem(24);
+    }
+}
+
+.information-card__text {
+    margin-top: rem(8);
+    @include mq('md') {
+        color: $black;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 7;
+    }
+}
+
+.information-card__button {
+    text-align: center;
+    margin-top: rem(40);
+}
+

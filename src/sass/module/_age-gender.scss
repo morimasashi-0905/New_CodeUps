@@ -1,0 +1,11 @@
+@use "global" as *;
+
+.age-gender {
+    color: $font;
+    font-size: rem(12);
+    font-family: $jpn-font-family;
+    line-height: 1;
+    @include mq('md') {
+        line-height: 1.5;
+    }
+}
