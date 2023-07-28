@@ -56,7 +56,7 @@ body {
   font-family: $base-font-family;
   font-weight: $normal;
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
 }
 body.is-open {
   overflow: hidden;

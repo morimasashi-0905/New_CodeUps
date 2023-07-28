@@ -1,12 +1,79 @@
 
+document.addEventListener('DOMContentLoaded',function(){
+    const mm = gsap.matchMedia();
+// opening
+    let openingTL = gsap.timeline();
+    let turtleImages = document.querySelectorAll('.js-top-mv__animation-image > *');
+    let mvTitles = document.querySelectorAll('.js-top-mv__title > *');
+    let body = document.querySelector('body');
+    body.classList.add('is-open');
+    // 767px以下の時
+    mm.add('(max-width:767px)',function(){
+        openingTL
+        .to('.js-header',{delay:.5,y:0, duration:1})
+        .to(mvTitles,{autoAlpha:1, duration:1.3, ease:'power1.in'},'-=.7')
+        .add(() => {
+            body.classList.remove('is-open');
+        });
+    });
+    // 768px以上の時
+    mm.add('(min-width:768px)',function(){
+        // body.classList.add('is-open');
+        openingTL
+        .to(mvTitles,{delay:.5, autoAlpha:0, duration:1 ,ease:'power4.in', color: '#fff'})
+        .to(turtleImages,{delay:.5, y:0,duration:2.5 ,ease:'power4.out', stagger:{each:.2}},'-=1')
+        .to('.js-header',{y:0, duration:1},'-=1.3')
+        .to(mvTitles,{autoAlpha:1, duration:2, ease:'power4.in'},'-=1.5')
+        .add(() => {
+            body.classList.remove('is-open');
+        });
+    });
+
+    // 画像アニメーション
+    mm.add('(max-width:767px)',function(){
+        gsap.utils.toArray('.js-image').forEach(Image =>{
+            let img = Image.querySelector('img');
+            let span = Image.querySelector('span');
+            let TL = gsap.timeline({scrollTrigger:{
+                trigger: Image,
+                start: 'top 100%',
+                toggleActions:'play none none reverse',
+            }})
+            TL
+            .to(img, {delay:.5, duration:.5, x:0, ease:'power:4'})
+            .to(span, {duration:.5, x:0, ease:'power:4'},'<=')
+            .to(span, {delay:.2, duration:.5, x:'-101%', ease:'power:4'})
+        });
+    });
+    mm.add('(min-width:768px)',function(){
+        gsap.utils.toArray('.js-image').forEach(Image =>{
+            let img = Image.querySelector('img');
+            let source = Image.querySelector('source');
+            let span = Image.querySelector('span');
+            let TL = gsap.timeline({scrollTrigger:{
+                trigger: Image,
+                start: 'top 100%',
+                toggleActions:'play none none reverse',
+            }})
+            TL
+            .to(img, {delay:.5, duration:.5, x:0, ease:'power:4'})
+            .to(source, {duration:.5, x:0, ease:'power:4'},'<=')
+            .to(span,{duration:.5, x:0, ease:'power:4'},'<=')
+            .to(span, {delay:.2, duration:.5, x:'-101%', ease:'power:4'})
+        });
+    })
+})
+
+
+
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
 
 // ハンバーガー、ドロワー
     $(".js-hamburger, .js-drawer, .sp-nav__items > a").click(function () {
         $(".js-hamburger").toggleClass("is-open");
-        $("body").toggleClass("is-open");
         $(".header").toggleClass("is-open");
         $(".js-drawer").fadeToggle();
+        $("body").toggleClass("is-open");
     });
 
 // スライダー
@@ -37,15 +104,22 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 // js-top-campaign__swiper
     let topCampaignSwipeOption = {
         loop: true,
-        // autoplay: {
-        //     delay: 4000,
-        //     disableOnInteraction: false,
-        // },
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
         speed: 700,
         slidesPerView: 1.2,
         spaceBetween: 24,
         breakpoints: {
-            1024: { // 1024px以上
+            600: { // 600px以上
+                slidesPerView: 1.7,
+            },
+            768: { // 768px以上
+                slidesPerView: 3.5,
+                spaceBetween: 24,
+            },
+            1440: { // 1024px以上
                 slidesPerView: 3.5,
                 spaceBetween: 40
             }
@@ -104,61 +178,4 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 });
 
 
-document.addEventListener('DOMContentLoaded',function(){
-    const mm = gsap.matchMedia();
-    // opening
-    let openingTL = gsap.timeline();
-    let turtleImages = document.querySelectorAll('.js-top-mv__animation-image > *');
-    let mvTitles = document.querySelectorAll('.js-top-mv__title > *');
-    // 767px以下の時
-    mm.add('(max-width:767px)',function(){
-        openingTL
-        .to('.js-header',{delay:.5,y:0, duration:1})
-        .to(mvTitles,{autoAlpha:1, duration:1.3, ease:'power1.in'},'-=.7')
-        .to('body',{overflow:'visible'})
-    });
-    // 768px以上の時
-    mm.add('(min-width:768px)',function(){
-        openingTL
-        .to(mvTitles,{delay:.5, autoAlpha:0, duration:1 ,ease:'power4.in', color: '#fff'})
-        .to(turtleImages,{delay:.5, y:0,duration:2.5 ,ease:'power4.out', stagger:{each:.2}},'-=1')
-        .to('.js-header',{y:0, duration:1},'-=1.3')
-        .to(mvTitles,{autoAlpha:1, duration:2, ease:'power4.in'},'-=1.5')
-        .to('body',{overflow:'visible'})
-    });
-
-    // 画像アニメーション
-    mm.add('(max-width:767px)',function(){
-        gsap.utils.toArray('.js-image').forEach(Image =>{
-            let img = Image.querySelector('img');
-            let span = Image.querySelector('span');
-            let TL = gsap.timeline({scrollTrigger:{
-                trigger: Image,
-                start: 'top 100%',
-                toggleActions:'play none none reverse',
-            }})
-            TL
-            .to(img, {delay:.5, duration:.5, x:0, ease:'power:4'})
-            .to(span, {duration:.5, x:0, ease:'power:4'},'<=')
-            .to(span, {delay:.2, duration:.5, x:'-101%', ease:'power:4'})
-        });
-    });
-    mm.add('(min-width:768px)',function(){
-        gsap.utils.toArray('.js-image').forEach(Image =>{
-            let img = Image.querySelector('img');
-            let source = Image.querySelector('source');
-            let span = Image.querySelector('span');
-            let TL = gsap.timeline({scrollTrigger:{
-                trigger: Image,
-                start: 'top 100%',
-                toggleActions:'play none none reverse',
-            }})
-            TL
-            .to(img, {delay:.5, duration:.5, x:0, ease:'power:4'})
-            .to(source, {duration:.5, x:0, ease:'power:4'},'<=')
-            .to(span,{duration:.5, x:0, ease:'power:4'},'<=')
-            .to(span, {delay:.2, duration:.5, x:'-101%', ease:'power:4'})
-        });
-    })
-})
 
