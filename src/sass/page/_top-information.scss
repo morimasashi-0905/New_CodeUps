@@ -2,9 +2,6 @@
 
 .top-information {
     background-color: $l-green;
-}
-
-.top-information__inner {
     padding-top: rem(80);
     padding-bottom: rem(80);
     @include mq('md') {

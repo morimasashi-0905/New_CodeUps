@@ -15,8 +15,6 @@
 }
 
 .information-card__contents {
-    display: flex;
-    flex-direction: column;
     margin-top: rem(27);
     @include mq('md') {
         width: 50%;

@@ -13,9 +13,7 @@
         font-size: rem(40);
     }
 }
-
-.section-title__main span,
-.section-title__main--white span {
+.section-title__main::first-letter {
     color: $accent;
 }
 
@@ -26,10 +24,11 @@
     font-size: rem(12);
     line-height: 1;
     font-family: $jpn-font-family;
+    font-weight: $normal;
 }
 
 .section-title__main--white,
-.section-title__main--white span,
+.section-title__main--white::first-letter,
 .section-title__sub--white {
     @include mq('md') {
         color: $white;

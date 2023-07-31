@@ -1,7 +1,10 @@
 @use "global" as *;
 
 .campaign-card {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    font-family: $jpn-font-family;
     transition: .3s; // hover用
 }
 
@@ -28,11 +31,6 @@
     }
 }
 
-.campaign-card__upper-body {
-    display: flex;
-    flex-direction: column;
-}
-
 .campaign-card__card-title {
     color: $black;
     font-size: rem(16);
@@ -41,4 +39,5 @@
     border-bottom: rem(1) solid $accent;
     margin-top: rem(4);
     padding-bottom: rem(6);
+    flex-grow: 1;
 }

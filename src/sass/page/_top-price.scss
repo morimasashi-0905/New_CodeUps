@@ -3,6 +3,12 @@
 .top-price {
     background-color: $l-green;
     position: relative;
+    padding-top: rem(80);
+    padding-bottom: rem(80);
+    @include mq('md') {
+        padding-top: rem(100);
+        padding-bottom: rem(100);
+    }
 }
 .top-price:after {
     @include mq('md') {
@@ -14,15 +20,6 @@
         position: absolute;
         bottom: rem(60);
         left: max(calc(50vw - rem(620)), calc(50vw - 50% + rem(25)));
-    }
-}
-
-.top-price__inner {
-    padding-top: rem(80);
-    padding-bottom: rem(80);
-    @include mq('md') {
-        padding-top: rem(100);
-        padding-bottom: rem(100);
     }
 }
 

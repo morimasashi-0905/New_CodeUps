@@ -109,21 +109,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
             disableOnInteraction: false,
         },
         speed: 700,
-        slidesPerView: 1.2,
-        spaceBetween: 24,
-        breakpoints: {
-            600: { // 600px以上
-                slidesPerView: 1.7,
-            },
-            768: { // 768px以上
-                slidesPerView: 3.5,
-                spaceBetween: 24,
-            },
-            1440: { // 1024px以上
-                slidesPerView: 3.5,
-                spaceBetween: 40
-            }
-        },
+        slidesPerView: "auto",
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",

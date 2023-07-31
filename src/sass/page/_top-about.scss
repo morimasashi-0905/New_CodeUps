@@ -12,7 +12,7 @@
         height: rem(181);
         position: absolute;
         bottom: rem(-90);
-        right: max(calc(50vw - rem(640)), calc(50vw - 50% + rem(80)));
+        right: max(calc(50vw - rem(640)), calc(50vw - 50% + rem(24)));
     }
 }
 
@@ -44,7 +44,6 @@
     }
 }
 .top-about__image2 {
-    z-index: $z-under;
     margin-left: auto;
     width: calc(281 / 345 * 100%);
     padding-top: rem(26);
