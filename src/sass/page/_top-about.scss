@@ -12,7 +12,7 @@
         height: rem(181);
         position: absolute;
         bottom: rem(-90);
-        right: max(calc(50vw - rem(640)), calc(50vw - 50% + rem(24)));
+        right: calc(50% - min(48%, rem(640)));
     }
 }
 

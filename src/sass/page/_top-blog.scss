@@ -12,7 +12,7 @@
     @include mq('md') {
         content: "";
         display: inline-block;
-        background: url(../images/common/bg-fish-white.png) no-repeat center / contain;
+        background: url(../images/common/bg-fish-white.png) no-repeat center center / contain;
         width: rem(437);
         height: rem(201);
         position: absolute;
@@ -21,12 +21,14 @@
     }
 }
 
-.top-blog__bg-image {
+.top-blog:after {
+    content: "";
     @include mq('md') {
         display: inline-block;
         width: 100%;
         height: rem(500);
         background-image: url(../images/common/blog-bg.jpg);
+        background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
         position: absolute;
