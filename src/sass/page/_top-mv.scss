@@ -104,9 +104,9 @@
     text-transform: uppercase;
     font-size: rem(40);
     letter-spacing: 0.51em;
+    text-indent: 0.51em;
     position: relative;
     opacity: 0;
-    text-indent: 0.51em;
     line-height: 1;
     @include mq('md') {
         font-size: rem(80);

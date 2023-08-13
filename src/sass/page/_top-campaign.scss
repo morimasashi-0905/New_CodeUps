@@ -44,7 +44,6 @@
         display: flex;
         position: absolute;
         top: rem(-90);
-        right: calc(50% - rem(720 * (540 / 720)));
         right: min(rem(25), calc(50vw - rem(540)));
         width: rem(240);
         height: rem(80);

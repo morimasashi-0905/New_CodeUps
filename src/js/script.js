@@ -6,7 +6,6 @@ function setCookie(name, value, days) {
     const expires = "expires=" + date.toUTCString();
     document.cookie = name + "=" + value + ";" + expires + ";path=/";
 }
-
 // クッキーを取得
 function getCookie(name) {
     const value = "; " + document.cookie;// 全てのクッキーの文字列を取得し、先頭に"; "を追加
@@ -49,7 +48,6 @@ function playAnimation(){
         });
     });
 }
-
 // 2回目以降のリロード
 function hideAnimation(){
     let turtleImages = document.querySelectorAll('.js-top-mv__animation-image > *');
@@ -59,7 +57,7 @@ function hideAnimation(){
     gsap.set(turtleImages,{y:0})
 }
 
-// クッキー判定
+// クッキー判定とアニメーション実行
 document.addEventListener("DOMContentLoaded", function() {
     const animationPlayed = getCookie("animationPlayed");
     if (animationPlayed) {
@@ -105,7 +103,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     })
 });
-
 
 
 
